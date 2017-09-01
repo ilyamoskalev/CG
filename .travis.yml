@@ -16,3 +16,6 @@ deploy:
     repo: ilyamoskalev/CG
     branch: master
   skip_cleanup: true
+
+script:
+  - npm i
