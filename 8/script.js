@@ -120,6 +120,7 @@ function cyrcusBeck(stack, line) {
     };
 }
 
+
 const drawLine = (x0, y0, x1, y1) => {
     ctx.beginPath();
     ctx.moveTo(x0, y0);
@@ -137,10 +138,10 @@ const drawTestLine = (x0, y0, x1, y1, color) => {
     ctx.moveTo(start[0], start[1]);
     ctx.lineTo(end[0], end[1]);
 
-    ctx.strokeStyle = '#226600';
+    ctx.strokeStyle = `#${color}`;
     ctx.lineWdith = 1;
     ctx.stroke();
-}
+};
 
 function deleteLine(x0, y0, x1, y1) {
     ctx.beginPath();
@@ -171,20 +172,20 @@ drawTestLine(150, 300, 300, 280, 'ff0211');
 drawTestLine(150, 250, 550, 400, 'ff0211');
 
 document.addEventListener('keydown', event => {
-    if (+event.keyCode === 13) {
-    for (let i = 0; i < stack.length; ++i) {
-        let line = cyrcusBeck(graph, {
-            first: {
-                x: stack[i][0][0],
-                y: stack[i][0][1]
-            },
-            second: {
-                x: stack[i][1][0],
-                y: stack[i][1][1]
-            },
-        });
+    if (+event.keyCode === 39) {
+        for (let i = 0; i < stack.length; ++i) {
+            let line = cyrcusBeck(graph, {
+                first: {
+                    x: stack[i][0][0],
+                    y: stack[i][0][1]
+                },
+                second: {
+                    x: stack[i][1][0],
+                    y: stack[i][1][1]
+                },
+            });
 
-        deleteLine(line.first.x, line.first.y, line.second.x, line.second.y);
+            deleteLine(line.first.x, line.first.y, line.second.x, line.second.y);
+        }
     }
-}
 });
