@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Москалев И.А. ИУ8-51</title>
+</head>
+<body>
+    <script>
+        function onClick() {
+            var ctx = canvas.getContext("2d");
+            ctx.fillStyle="#00aaff";
+            ctx.fillRect(event.offsetX, event.offsetY, 10, 10);
+        }
+
+    </script>
+
+    <canvas id="lab1" width="1000" height="1000">
+        <script>
+            let canvas = document.getElementById("lab1");
+            let array0 = new Array(10);
+            for(let i = 0; i < 10; i++){
+                array0[i] = 1
+            }
+
+            canvas.addEventListener("click", onClick, false);
+        </script>
+    </canvas>
+</body>
+</html>
