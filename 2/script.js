@@ -1,4 +1,4 @@
-let canvas = document.getElementById('lab01');
+var canvas = document.getElementById('lab01');
 const ctx = canvas.getContext('2d');
 
 const PARAMS = {
@@ -18,9 +18,9 @@ canvas.addEventListener('click', function (event) {
 function saveTextAsFile() {
 
     const img = ctx.getImageData(10, 10, PARAMS.width, PARAMS.height).data;
-    let text = '';
+    var text = '';
 
-    for (let i = 3; i < img.length; i += 4) {
+    for (var i = 3; i < img.length; i += 4) {
         console.log(img[i]);
         text += img[i] ? '1' : '0';
     }
@@ -59,7 +59,7 @@ document.getElementById('loadbutton').addEventListener('click', function () {
     ctx.fillStyle = "#9eee00";
 
     fileReader.onload = function (fileLoadedEvent) {
-        let x = 0, y = 0;
+        var x = 0, y = 0;
         var textFromFileLoaded = fileLoadedEvent.target.result;
         for (char in textFromFileLoaded) {
             if (textFromFileLoaded[char] == '1') {
